@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A7C2E;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#4A7C2E;stop-opacity:0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <path d="M200 80L260 115v70l-60 35-60-35v-70z" fill="#4A7C2E" opacity="0.15"/>
+  <path d="M200 100L245 125v50l-45 25-45-25v-50z" fill="#4A7C2E" opacity="0.25"/>
+  <text x="200" y="260" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#4A7C2E">Propóleo</text>
+  <text x="200" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="#4A7C2E" opacity="0.7">180g</text>
+  <text x="200" y="340" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#4A7C2E" opacity="0.5">La Abejita del Panal 8A</text>
+  <text x="200" y="358" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#4A7C2E" opacity="0.4">100% Natural · INVIMA</text>
+</svg>

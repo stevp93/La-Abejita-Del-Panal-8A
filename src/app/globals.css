@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   DESIGN TOKENS — La Abejita del Panal 8A
+   ============================================ */
+
+:root {
+  /* Primary — Honey Gold */
+  --color-primary: #D4A017;
+  --color-primary-dark: #B8860B;
+  --color-primary-light: #F5DEB3;
+
+  /* Secondary — Forest Green */
+  --color-secondary: #2D5016;
+  --color-secondary-dark: #1A3A0A;
+  --color-secondary-light: #4A7C2E;
+
+  /* Accent — Earth Brown */
+  --color-accent: #8B4513;
+
+  /* Backgrounds */
+  --color-bg-primary: #FFFDF7;
+  --color-bg-secondary: #FFF8E7;
+  --color-bg-dark: #1A2E0A;
+
+  /* Text */
+  --color-text-primary: #2C1810;
+  --color-text-secondary: #5C4033;
+  --color-text-muted: #8B7355;
+  --color-text-on-dark: #FFFDF7;
+
+  /* Border */
+  --color-border: #E8DCC8;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(44, 24, 16, 0.06);
+  --shadow-md: 0 4px 12px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 24px rgba(44, 24, 16, 0.12);
+  --shadow-xl: 0 16px 48px rgba(44, 24, 16, 0.16);
+}
+
+/* ============================================
+   BASE RESETS
+   ============================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-honey-50 text-earth-800 font-body;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-earth-800;
+  }
+
+  ::selection {
+    background-color: rgba(212, 160, 23, 0.2);
+    color: #2C1810;
+  }
+
+  /* Focus ring — accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-honey-400;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+@layer components {
+  /* Section container — centered, responsive */
+  .section-container {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section vertical spacing */
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Alternating section bg */
+  .section-alt {
+    @apply bg-honey-100;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white rounded-card shadow-card border border-earth-200/50
+           transition-shadow duration-200 ease-out;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover;
+  }
+
+  /* CTA Button primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-lg
+           bg-honey-400 text-white font-body font-semibold text-body-sm
+           transition-all duration-200 ease-out
+           hover:bg-honey-500 active:bg-honey-600
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-honey-400
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* CTA Button secondary */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-lg
+           bg-forest-500 text-white font-body font-semibold text-body-sm
+           transition-all duration-200 ease-out
+           hover:bg-forest-600 active:bg-forest-700
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-400
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3 rounded-lg
+           border-2 border-honey-400 text-honey-500 font-body font-semibold text-body-sm
+           transition-all duration-200 ease-out
+           hover:bg-honey-400 hover:text-white
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-honey-400;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1
+           rounded-full text-caption font-medium
+           bg-forest-50 text-forest-500 border border-forest-200;
+  }
+
+  /* Honeycomb pattern overlay */
+  .honeycomb-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L56.6 15.5v26L30 52 3.4 41.5v-26z' fill='none' stroke='%23D4A017' stroke-opacity='0.05' stroke-width='0.8'/%3E%3C/svg%3E");
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-honey-400 to-honey-500;
+  }
+}
+
+/* ============================================
+   UTILITY OVERRIDES
+   ============================================ */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
